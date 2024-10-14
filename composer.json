@@ -1,0 +1,32 @@
+{
+    "name": "vzgcoders/helix",
+    "description": "This class provides methods to interact with the Twitch Helix API using PHP.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Valithor Obsidion",
+            "email": "valithor@valgorithms.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "monolog/monolog": "^3.2",
+        "nesbot/carbon": "^2.38 || ^3.0",
+        "react/async": "^4.0 || ^3.0",
+        "react/promise": "^2.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Twitch\\": "src/Twitch"
+        }
+    },
+    "suggest": {
+        "vzgcoders/twitchphp": "An unofficial ReactPHP framework",
+        "team-reflex/discord-php": "An unofficial ReactPHP framework, required to relay chat to Discord"
+    },
+    "scripts": {
+        "cs": ["./vendor/bin/php-cs-fixer fix"],
+        "unit": ["./vendor/bin/phpunit"]
+    }
+}
