@@ -435,7 +435,7 @@ class Helix //extends Http
      * 
      * @return PromiseInterface A promise that resolves to the user information.
      */
-    public function getUser(
+    public static function getUser(
         string $login,
         ?LoopInterface $loop = null
     ): PromiseInterface {
@@ -456,7 +456,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the raid information.
      * @throws QueryException If the query fails.
      */
-    public function startRaid(
+    public static function startRaid(
         string $fromBroadcasterId,
         string $toBroadcasterId,
         ?LoopInterface $loop = null
@@ -481,7 +481,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves when the raid is canceled.
      * @throws QueryException If the query fails.
      */
-    public function cancelRaid(
+    public static function cancelRaid(
         string $broadcasterId,
         ?LoopInterface $loop = null
     ): PromiseInterface {
@@ -500,7 +500,7 @@ class Helix //extends Http
      * @param string $broadcasterId The ID of the broadcaster whose goals you want to get.
      * @return PromiseInterface<string> A promise that resolves with the result or rejects with an error.
      */
-    public function getCreatorGoals(
+    public static function getCreatorGoals(
         string $broadcasterId,
         ?LoopInterface $loop = null
     ): PromiseInterface {
@@ -627,7 +627,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the list of published videos.
      * @throws QueryException If the query fails.
      */
-    public function getVideos(
+    public static function getVideos(
         ?array $ids = null,
         ?string $userId = null,
         ?string $gameId = null,
@@ -668,7 +668,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the list of IDs of the videos that were deleted.
      * @throws QueryException If the query fails.
      */
-    public function deleteVideos(
+    public static function deleteVideos(
         array $ids,
         ?LoopInterface $loop = null
     ): PromiseInterface {
@@ -2291,7 +2291,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the guest star settings.
      * @throws QueryException If the query fails.
      */
-    public function getGuestStarChannelSettings(
+    public static function getGuestStarChannelSettings(
         string $broadcasterId,
         string $moderatorId,
         ?LoopInterface $loop = null
@@ -2313,7 +2313,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves when the settings are updated.
      * @throws QueryException If the query fails.
      */
-    public function updateGuestStarChannelSettings(
+    public static function updateGuestStarChannelSettings(
         string $broadcasterId,
         array $settings,
         ?LoopInterface $loop = null
@@ -2335,7 +2335,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the session details.
      * @throws QueryException If the query fails.
      */
-    public function getGuestStarSession(
+    public static function getGuestStarSession(
         string $broadcasterId,
         string $moderatorId,
         ?LoopInterface $loop = null
@@ -2356,7 +2356,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the session details.
      * @throws QueryException If the query fails.
      */
-    public function createGuestStarSession(
+    public static function createGuestStarSession(
         string $broadcasterId,
         ?LoopInterface $loop = null
     ): PromiseInterface {
@@ -2377,7 +2377,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the session details when the session was ended.
      * @throws QueryException If the query fails.
      */
-    public function endGuestStarSession(
+    public static function endGuestStarSession(
         string $broadcasterId,
         string $sessionId,
         ?LoopInterface $loop = null
@@ -2400,7 +2400,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the list of pending invites.
      * @throws QueryException If the query fails.
      */
-    public function getGuestStarInvites(
+    public static function getGuestStarInvites(
         string $broadcasterId,
         string $moderatorId,
         string $sessionId,
@@ -2425,7 +2425,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves when the invite is sent.
      * @throws QueryException If the query fails.
      */
-    public function sendGuestStarInvite(
+    public static function sendGuestStarInvite(
         string $broadcasterId,
         string $moderatorId,
         string $sessionId,
@@ -2451,7 +2451,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves when the invite is revoked.
      * @throws QueryException If the query fails.
      */
-    public function deleteGuestStarInvite(
+    public static function deleteGuestStarInvite(
         string $broadcasterId,
         string $moderatorId,
         string $sessionId,
@@ -2478,7 +2478,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves when the guest is assigned to the slot.
      * @throws QueryException If the query fails.
      */
-    public function assignGuestStarSlot(
+    public static function assignGuestStarSlot(
         string $broadcasterId,
         string $moderatorId,
         string $sessionId,
@@ -2506,7 +2506,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves when the slot is updated.
      * @throws QueryException If the query fails.
      */
-    public function updateGuestStarSlot(
+    public static function updateGuestStarSlot(
         string $broadcasterId,
         string $moderatorId,
         string $sessionId,
@@ -2537,7 +2537,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves when the slot assignment is removed.
      * @throws QueryException If the query fails.
      */
-    public function deleteGuestStarSlot(
+    public static function deleteGuestStarSlot(
         string $broadcasterId,
         string $moderatorId,
         string $sessionId,
@@ -2567,7 +2567,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves when the slot settings are updated.
      * @throws QueryException If the query fails.
      */
-    public function updateGuestStarSlotSettings(
+    public static function updateGuestStarSlotSettings(
         string $broadcasterId,
         string $moderatorId,
         string $sessionId,
@@ -2593,7 +2593,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the list of Hype Train events.
      * @throws QueryException If the query fails.
      */
-    public function getHypeTrainEvents(
+    public static function getHypeTrainEvents(
         string $broadcasterId,
         ?int $first = 1,
         ?string $after = null,
@@ -2621,7 +2621,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the list of messages and whether Twitch would approve them for chat.
      * @throws QueryException If the query fails.
      */
-    public function checkAutoModStatus(
+    public static function checkAutoModStatus(
         string $broadcasterId,
         array $messages,
         ?LoopInterface $loop = null
@@ -2645,7 +2645,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves when the message is approved or denied.
      * @throws QueryException If the query fails.
      */
-    public function manageHeldAutoModMessages(
+    public static function manageHeldAutoModMessages(
         string $userId,
         string $msgId,
         string $action,
@@ -2673,7 +2673,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the AutoMod settings.
      * @throws QueryException If the query fails.
      */
-    public function getAutoModSettings(
+    public static function getAutoModSettings(
         string $broadcasterId,
         string $moderatorId,
         ?LoopInterface $loop = null
@@ -2696,7 +2696,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the updated AutoMod settings.
      * @throws QueryException If the query fails.
      */
-    public function updateAutoModSettings(
+    public static function updateAutoModSettings(
         string $broadcasterId,
         string $moderatorId,
         array $settings,
@@ -2722,7 +2722,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the list of banned users.
      * @throws QueryException If the query fails.
      */
-    public function getBannedUsers(
+    public static function getBannedUsers(
         string $broadcasterId,
         ?array $userIds = null,
         ?int $first = 20,
@@ -2757,7 +2757,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the list of banned or timed-out users.
      * @throws QueryException If the query fails.
      */
-    public function banUser(
+    public static function banUser(
         string $broadcasterId,
         string $moderatorId,
         string $userId,
@@ -2790,7 +2790,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves when the ban or timeout is removed.
      * @throws QueryException If the query fails.
      */
-    public function unbanUser(
+    public static function unbanUser(
         string $broadcasterId,
         string $moderatorId,
         string $userId,
@@ -2817,7 +2817,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the list of unban requests.
      * @throws QueryException If the query fails.
      */
-    public function getUnbanRequests(
+    public static function getUnbanRequests(
         string $broadcasterId,
         string $moderatorId,
         string $status,
@@ -2854,7 +2854,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the resolved unban request.
      * @throws QueryException If the query fails.
      */
-    public function resolveUnbanRequests(
+    public static function resolveUnbanRequests(
         string $broadcasterId,
         string $moderatorId,
         string $unbanRequestId,
@@ -2883,7 +2883,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the list of blocked terms.
      * @throws QueryException If the query fails.
      */
-    public function getBlockedTerms(
+    public static function getBlockedTerms(
         string $broadcasterId,
         string $moderatorId,
         ?int $first = 20,
@@ -2914,7 +2914,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the added blocked term.
      * @throws QueryException If the query fails.
      */
-    public function addBlockedTerm(
+    public static function addBlockedTerm(
         string $broadcasterId,
         string $moderatorId,
         string $text,
@@ -2939,7 +2939,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves when the blocked term is removed.
      * @throws QueryException If the query fails.
      */
-    public function removeBlockedTerm(
+    public static function removeBlockedTerm(
         string $broadcasterId,
         string $moderatorId,
         string $id,
@@ -2963,7 +2963,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves when the messages are removed.
      * @throws QueryException If the query fails.
      */
-    public function deleteChatMessages(
+    public static function deleteChatMessages(
         string $broadcasterId,
         string $moderatorId,
         ?string $messageId = null,
@@ -2992,7 +2992,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the list of channels that the user has moderator privileges in.
      * @throws QueryException If the query fails.
      */
-    public function getModeratedChannels(
+    public static function getModeratedChannels(
         string $userId,
         ?string $after = null,
         ?int $first = 20,
@@ -3022,7 +3022,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the list of moderators.
      * @throws QueryException If the query fails.
      */
-    public function getModerators(
+    public static function getModerators(
         string $broadcasterId,
         ?array $userIds = null,
         ?int $first = 20,
@@ -3052,7 +3052,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves when the moderator is added.
      * @throws QueryException If the query fails.
      */
-    public function addChannelModerator(
+    public static function addChannelModerator(
         string $broadcasterId,
         string $userId,
         ?LoopInterface $loop = null
@@ -3074,7 +3074,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves when the moderator is removed.
      * @throws QueryException If the query fails.
      */
-    public function removeChannelModerator(
+    public static function removeChannelModerator(
         string $broadcasterId,
         string $userId,
         ?LoopInterface $loop = null
@@ -3098,7 +3098,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the list of VIPs.
      * @throws QueryException If the query fails.
      */
-    public function getVIPs(
+    public static function getVIPs(
         string $broadcasterId,
         ?array $userIds = null,
         ?int $first = 20,
@@ -3128,7 +3128,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves when the VIP is added.
      * @throws QueryException If the query fails.
      */
-    public function addChannelVIP(
+    public static function addChannelVIP(
         string $broadcasterId,
         string $userId,
         ?LoopInterface $loop = null
@@ -3150,7 +3150,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves when the VIP status is removed.
      * @throws QueryException If the query fails.
      */
-    public function removeChannelVIP(
+    public static function removeChannelVIP(
         string $broadcasterId,
         string $userId,
         ?LoopInterface $loop = null
@@ -3173,7 +3173,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the updated Shield Mode status.
      * @throws QueryException If the query fails.
      */
-    public function updateShieldModeStatus(
+    public static function updateShieldModeStatus(
         string $broadcasterId,
         string $moderatorId,
         bool $isActive,
@@ -3197,7 +3197,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the Shield Mode status.
      * @throws QueryException If the query fails.
      */
-    public function getShieldModeStatus(
+    public static function getShieldModeStatus(
         string $broadcasterId,
         string $moderatorId,
         ?LoopInterface $loop = null
@@ -3225,7 +3225,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the warning information.
      * @throws QueryException If the query fails.
      */
-    public function warnChatUser(
+    public static function warnChatUser(
         string $broadcasterId,
         string $moderatorId,
         string $userId,
@@ -3257,7 +3257,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the list of polls.
      * @throws QueryException If the query fails.
      */
-    public function getPolls(
+    public static function getPolls(
         string $broadcasterId,
         ?array $ids = null,
         ?int $first = 20,
@@ -3291,7 +3291,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the created poll.
      * @throws QueryException If the query fails.
      */
-    public function createPoll(
+    public static function createPoll(
         string $broadcasterId,
         string $title,
         array $choices,
@@ -3326,7 +3326,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the ended poll.
      * @throws QueryException If the query fails.
      */
-    public function endPoll(
+    public static function endPoll(
         string $broadcasterId,
         string $pollId,
         string $status,
@@ -3356,7 +3356,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the list of predictions.
      * @throws QueryException If the query fails.
      */
-    public function getPredictions(
+    public static function getPredictions(
         string $broadcasterId,
         ?array $ids = null,
         ?int $first = 20,
@@ -3388,7 +3388,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the created prediction.
      * @throws QueryException If the query fails.
      */
-    public function createPrediction(
+    public static function createPrediction(
         string $broadcasterId,
         string $title,
         array $outcomes,
@@ -3420,7 +3420,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the updated prediction.
      * @throws QueryException If the query fails.
      */
-    public function endPrediction(
+    public static function endPrediction(
         string $broadcasterId,
         string $predictionId,
         string $status,
@@ -3453,7 +3453,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the broadcaster’s streaming schedule.
      * @throws QueryException If the query fails.
      */
-    public function getSchedule(
+    public static function getSchedule(
         string $broadcasterId,
         ?array $ids = null,
         ?string $startTime = null,
@@ -3490,7 +3490,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the added broadcast segment.
      * @throws QueryException If the query fails.
      */
-    public function createScheduleSegment(
+    public static function createScheduleSegment(
         string $broadcasterId,
         string $startTime,
         string $timezone,
@@ -3531,7 +3531,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the updated broadcast segment.
      * @throws QueryException If the query fails.
      */
-    public function updateScheduleSegment(
+    public static function updateScheduleSegment(
         string $broadcasterId,
         string $segmentId,
         ?string $startTime = null,
@@ -3566,7 +3566,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves when the broadcast segment is removed.
      * @throws QueryException If the query fails.
      */
-    public function deleteScheduleSegment(
+    public static function deleteScheduleSegment(
         string $broadcasterId,
         string $segmentId,
         ?LoopInterface $loop = null
@@ -3591,7 +3591,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves when the schedule settings are updated.
      * @throws QueryException If the query fails.
      */
-    public function updateScheduleSettings(
+    public static function updateScheduleSettings(
         string $broadcasterId,
         ?bool $isVacationEnabled = null,
         ?string $vacationStartTime = null,
@@ -3622,7 +3622,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the list of games or categories that match the query.
      * @throws QueryException If the query fails.
      */
-    public function searchCategories(
+    public static function searchCategories(
         string $query,
         ?int $first = 20,
         ?string $after = null,
@@ -3652,7 +3652,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the list of channels that match the query.
      * @throws QueryException If the query fails.
      */
-    public function searchChannels(
+    public static function searchChannels(
         string $query,
         ?bool $liveOnly = false,
         ?int $first = 20,
@@ -3681,7 +3681,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the channel’s stream key.
      * @throws QueryException If the query fails.
      */
-    public function getStreamKey(
+    public static function getStreamKey(
         string $broadcasterId,
         ?LoopInterface $loop = null
     ): PromiseInterface {
@@ -3709,7 +3709,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the list of streams.
      * @throws QueryException If the query fails.
      */
-    public function getStreams(
+    public static function getStreams(
         ?array $userIds = null,
         ?array $userLogins = null,
         ?array $gameIds = null,
@@ -3752,7 +3752,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the list of live streams of broadcasters that the specified user follows.
      * @throws QueryException If the query fails.
      */
-    public function getFollowedStreams(
+    public static function getFollowedStreams(
         string $userId,
         ?int $first = 100,
         ?string $after = null,
@@ -3780,7 +3780,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the marker that was added.
      * @throws QueryException If the query fails.
      */
-    public function createStreamMarker(
+    public static function createStreamMarker(
         string $userId,
         ?string $description = null,
         ?LoopInterface $loop = null
@@ -3807,7 +3807,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the list of markers.
      * @throws QueryException If the query fails.
      */
-    public function getStreamMarkers(
+    public static function getStreamMarkers(
         ?string $userId = null,
         ?string $videoId = null,
         ?int $first = 20,
@@ -3840,7 +3840,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the list of users that subscribe to the broadcaster.
      * @throws QueryException If the query fails.
      */
-    public function getBroadcasterSubscriptions(
+    public static function getBroadcasterSubscriptions(
         string $broadcasterId,
         ?array $userIds = null,
         ?int $first = 20,
@@ -3872,7 +3872,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the user's subscription status.
      * @throws QueryException If the query fails.
      */
-    public function checkUserSubscription(
+    public static function checkUserSubscription(
         string $broadcasterId,
         string $userId,
         ?LoopInterface $loop = null
@@ -3899,7 +3899,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the list of stream tags.
      * @throws QueryException If the query fails.
      */
-    public function getAllStreamTags(
+    public static function getAllStreamTags(
         ?array $tagIds = null,
         ?int $first = 20,
         ?string $after = null,
@@ -3924,7 +3924,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the list of stream tags.
      * @throws QueryException If the query fails.
      */
-    public function getStreamTags(
+    public static function getStreamTags(
         string $broadcasterId,
         ?LoopInterface $loop = null
     ): PromiseInterface {
@@ -3945,7 +3945,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the list of teams that the broadcaster is a member of.
      * @throws QueryException If the query fails.
      */
-    public function getChannelTeams(
+    public static function getChannelTeams(
         string $broadcasterId,
         ?LoopInterface $loop = null
     ): PromiseInterface {
@@ -3967,7 +3967,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the team's information.
      * @throws QueryException If the query fails.
      */
-    public function getTeam(
+    public static function getTeam(
         ?string $name = null,
         ?string $id = null,
         ?LoopInterface $loop = null
@@ -3994,7 +3994,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the list of users.
      * @throws QueryException If the query fails.
      */
-    public function getUsers(
+    public static function getUsers(
         ?array $ids = null,
         ?array $logins = null,
         ?LoopInterface $loop = null
@@ -4018,7 +4018,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the updated user information.
      * @throws QueryException If the query fails.
      */
-    public function updateUser(
+    public static function updateUser(
         string $description = '',
         ?LoopInterface $loop = null
     ): PromiseInterface {
@@ -4042,7 +4042,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the list of blocked users.
      * @throws QueryException If the query fails.
      */
-    public function getUserBlockList(
+    public static function getUserBlockList(
         string $broadcasterId,
         ?int $first = 20,
         ?string $after = null,
@@ -4071,7 +4071,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves when the user is blocked.
      * @throws QueryException If the query fails.
      */
-    public function blockUser(
+    public static function blockUser(
         string $targetUserId,
         ?string $sourceContext = null,
         ?string $reason = null,
@@ -4096,7 +4096,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves when the user is unblocked.
      * @throws QueryException If the query fails.
      */
-    public function unblockUser(
+    public static function unblockUser(
         string $targetUserId,
         ?LoopInterface $loop = null
     ): PromiseInterface {
@@ -4116,7 +4116,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the list of extensions that the user has installed.
      * @throws QueryException If the query fails.
      */
-    public function getUserExtensionsList(
+    public static function getUserExtensionsList(
         ?LoopInterface $loop = null
     ): PromiseInterface {
         $url = self::USERS_EXTENSIONS_LIST;
@@ -4135,7 +4135,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the active extensions that the broadcaster has installed.
      * @throws QueryException If the query fails.
      */
-    public function getUserActiveExtensions(
+    public static function getUserActiveExtensions(
         ?string $userId = null,
         ?LoopInterface $loop = null
     ): PromiseInterface {
@@ -4157,7 +4157,7 @@ class Helix //extends Http
      * @return PromiseInterface A promise that resolves to the updated extensions.
      * @throws QueryException If the query fails.
      */
-    public function updateUserExtensions(
+    public static function updateUserExtensions(
         array $data,
         ?LoopInterface $loop = null
     ): PromiseInterface {
